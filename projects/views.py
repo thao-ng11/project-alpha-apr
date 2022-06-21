@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
@@ -30,4 +30,6 @@ class ProjectCreateView(LoginRequiredMixin, CreateView):
     model = Project
     template_name = "projects/new.html"
     fields = ["name", "description", "members"]
-    success_url = reverse_lazy("show_projects")
+
+    def get_success_url(self):
+        return reverse_lazy("show_project", args=[self.object.id])

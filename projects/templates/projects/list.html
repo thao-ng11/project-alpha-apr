@@ -2,9 +2,9 @@
 {% block content %}
     <div>
         <h1>My Projects</h1>
-        {% comment %} <p>
+        <p>
             <a href="{% url 'create_project' %}">Create a new project</a>
-        </p> {% endcomment %}
+        </p>
         {% if not project_list %}
             <p>You are not assigned to any projects</p>
         {% else %}
