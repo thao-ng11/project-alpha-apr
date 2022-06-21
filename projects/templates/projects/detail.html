@@ -3,9 +3,8 @@
     <div>
         <h1>{{ project.name }}</h1>
         <p>{{ project.description }}</p>
-        {{ project.task }}
         <h2>Tasks</h2>
-        {% if project_list %}
+        {% if project.tasks.all %}
             <table>
                 <thead>
                     <tr>
@@ -17,13 +16,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for task in project.tags %}
+                    {% for task in project.tasks.all %}
                         <tr>
                             <td>{{ task.name }}</td>
-                            <td>{{ task.assignee.all }}</td>
-                            <td>{{ task.start_date.all }}</td>
-                            <td>{{ task.due_date.all }}</td>
-                            <td>{{ task.is_completed.all }}</td>
+                            <td>{{ task.assignee}}</td>
+                            <td>{{ task.start_date|date:"M d, Y"}}</td>
+                            <td>{{ task.due_date|date:"M d, Y"}}</td>
+                            <td>{{ task.is_completed|yesno}}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
