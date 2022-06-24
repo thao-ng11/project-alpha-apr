@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tasks', '0002_task_due_date_task_start_date'),
+        ("tasks", "0002_task_due_date_task_start_date"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='task',
-            name='is_completed',
-            field=models.BooleanField(choices=[(True, 'Yes'), (False, 'No')]),
+            model_name="task",
+            name="is_completed",
+            field=models.BooleanField(choices=[(True, "Yes"), (False, "No")]),
         ),
     ]
