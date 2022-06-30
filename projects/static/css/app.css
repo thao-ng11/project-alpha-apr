@@ -1,0 +1,434 @@
+@import url('https://fonts.google.com/specimen/Arima?category=Display');
+
+/* Set all elements to use the Open Sans font */
+body,
+input,
+textarea,
+button,
+select {
+    font-family: 'Arima', sans-serif;
+    color: #748DA6;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #748DA6;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:focus {
+    color: #748DA6;
+
+}
+
+/* Set the background color of all pages */
+html {
+    background-color: #D3CEDF;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(#F2D7D9, #9CB4CC);
+
+}
+
+/* Set the style of the navigation list */
+header nav ul {
+
+    box-sizing: border-box;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 2em;
+    padding: 0 0 0 1em;
+}
+
+
+
+/* Set the spacing and layout of the nav list items */
+header nav ul li {
+    display: inline-block;
+    margin: 0 1em;
+    padding: 1em 0 1em 0;
+}
+
+/* Set the style of the links in the nav */
+header nav ul li a {
+    color: #9CB4CC;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Set the style for title */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+
+}
+
+/* Make the input tags look nicer */
+input {
+    height: 1.5em;
+    border: 0px;
+    margin: 0;
+    padding: .25em .5em;
+    border-radius: 4px;
+}
+
+/* Make login button look better*/
+.button {
+
+    background-color: #d6d3dc;
+    background: border;
+    border-color: white;
+    border: 10;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0.3em 1em;
+
+}
+
+/* Make signup page look better*/
+.signup,
+.createproject {
+    background-color: #d6d3dc;
+    background: border;
+    border: 10;
+    border-color: white;
+    box-shadow: 0 2px 4px #9CB4CC;
+    margin: auto;
+    max-width: 400px;
+    padding: 2em 5em;
+    border-radius: 35px;
+}
+
+
+
+.signup input {
+    background-color: white;
+    border-radius: 4px;
+    margin: auto;
+    width: 400px;
+}
+
+.signup ul {
+    font-size: 14px;
+}
+
+.signup h1,
+.createproject h1 {
+    text-align: left;
+}
+
+.createproject {
+    max-width: 600px;
+}
+
+.createproject input {
+    background-color: white;
+    border-radius: 4px;
+    margin: auto;
+    width: 560px;
+
+}
+
+.createproject select {
+    background-color: white;
+    border-color: white;
+    border-radius: 4px;
+    margin: auto;
+    width: 578px;
+
+}
+
+.createproject textarea #id_members {
+    border-radius: 4px;
+    margin: auto;
+    width: 400px;
+}
+
+.projectname {
+    font-family: 'Arima', sans-serif;
+    color: #748DA6;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+/* Make the select boxes look nicer */
+select {
+    height: 2.5em;
+}
+
+/* Make the select-multiple boxes look nicer */
+select[multiple] {
+    height: 7.5em;
+}
+
+/* Make the textarea inputs look nicer */
+textarea {
+    background-color: white;
+    border-radius: 4px;
+    border-color: white;
+    border: none, border-width: 0, border: 0 properties margin: auto;
+    width: 580px;
+
+}
+
+/* Set the width on all tables */
+table {
+    width: 100%;
+}
+
+/* Set the projectlist */
+.projectlist {
+    text-align: center;
+    color: #748DA6;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+/* Set the size of the help text in forms */
+.helptext {
+    display: block;
+    font-size: 80%;
+}
+
+/* Make the login and sign-up forms look nicer */
+.login-form,
+.login,
+.signup-form {
+    background-color: #d6d3dc;
+    text-align: center;
+    border-radius: 35px;
+    box-shadow: 0 2px 4px #9CB4CC;
+    margin: auto;
+    max-width: 400px;
+    padding: 2em;
+}
+
+/* Make the task and projects forms look nicer */
+.task-form,
+.project-form {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    max-width: 600px;
+    padding: 2em;
+}
+
+/* Make all of the headers the same */
+.task-form h1,
+.login-form h1,
+.signup-form h1,
+.project-list h1,
+.project-form h1,
+.project-detail h1 {
+    margin-top: 0;
+}
+
+/* Add spacing to the section of the project detail */
+.project-detail h2 {
+    margin-top: 2em;
+}
+
+/* Standardize form layout using grid */
+.task-form p,
+.login-form p,
+.signup-form p,
+.project-form p {
+    display: grid;
+    align-items: center;
+    column-gap: 10px;
+    grid-template-columns: 100px 1fr;
+}
+
+/* Standardize help text positions in the grid */
+.task-form p .helptext,
+.login-form p .helptext,
+.signup-form p .helptext,
+.project-form p .helptext {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+/* Make the buttons a little larger */
+.task-form button,
+.my-tasks-list button,
+.login-form button,
+.signup-form button,
+.project-form button {
+    padding: 0.25em 1em;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.smallcontainer {
+    width: 80%;
+    font-size: large;
+    font-weight: bolder;
+    align-items: left;
+}
+
+#detailheader {
+    text-align: left;
+}
+
+.createbutton {
+    background-color: #d3cEDF;
+    background: border;
+    border: 10;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0.3em 1em;
+
+}
+
+.specialbutton {
+    width: 80%;
+    font-size: large;
+    font-weight: bolder;
+    align-items: left;
+}
+
+.table button {
+    border-color: white;
+    font-weight: bold;
+    background-color: transparent;
+
+}
+
+/* Format table */
+
+.table {
+    width: 90%;
+
+}
+
+thead {
+    background-color: #748DA6;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+tbody {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.table div {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    justify-content: space-between;
+    height: 27 px;
+    align-items: center;
+    border-radius: 40px;
+}
+
+span {
+    max-width: 130px;
+    min-width: 130px;
+    text-align: left;
+}
+
+.table td {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.table tr {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+    margin-bottom: 14px;
+    width: 90%;
+    background: white;
+    border-radius: 40px;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-height: 50px;
+    min-height: 50px;
+    align-items: center;
+}
+
+
+.table tr:nth-child(even) {
+    background-color: #e6e9ec;
+}
+
+.table>tbody>tr:hover {
+    background-color: #d3cEDF;
+}
+
+
+
+/* Add a nice box around the lists and details */
+.my-tasks-list,
+.project-list,
+.project-detail {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    max-width: 800px;
+    padding: 2em;
+}
+
+/* Add padding to the table header and table datum tags */
+.my-tasks-list th,
+.my-tasks-list td,
+.project-list th,
+.project-list td,
+.project-detail th,
+.project-detail td {
+    padding: .5em;
+}
+
+/* Add a bottom border to the table header tags */
+.my-tasks-list thead tr th,
+.project-list thead tr th,
+.project-detail thead tr th {
+    border-bottom: 2px solid #DEDEDE;
+
+}
+
+/* Center align the text on specific table header cells */
+.my-tasks-list tbody td:nth-child(2),
+.my-tasks-list tbody td:nth-child(3),
+.my-tasks-list tbody td:nth-child(4),
+.project-list tbody tr td,
+.project-detail tbody td:nth-child(2),
+.project-detail tbody td:nth-child(3),
+.project-detail tbody td:nth-child(4),
+.project-detail tbody td:nth-child(5) {
+    text-align: center;
+}
+
+/* Add horizontal rules to all rows except the last */
+.my-tasks-list tbody :not(tr:last-child) td,
+.project-list tbody :not(tr:last-child) td,
+.project-detail tbody :not(tr:last-child) td {
+    border-bottom: 1px solid #DEDEDE;
+}
+
+input[type=checkbox] {
+    display: none;
+}

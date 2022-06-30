@@ -1,29 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
+    <div class= "container">
         <h1>My Projects</h1>
-        <p>
-            <a href="{% url 'create_project' %}">Create a new project</a>
-        </p>
         {% if not project_list %}
             <p>You are not assigned to any projects</p>
         {% else %}
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Number of tasks</th>
-                    </tr>
-                </thead>
+            <table class= "table">
                 <tbody>
                     {% for project in project_list %}
                         <tr>
-                            <td><a href="{% url 'show_project' project.pk %}">{{ project.name }}</td>
-                                <td>{{ project.tasks.all|length }}</td>
-                            </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% endif %}
-    </div>
-{% endblock content %}
+                            <td >
+                                <div>
+                                    <span>
+                                        <a href="{% url 'show_project' project.pk %}">{{ project.name }}
+                                        </span>
+                                        <span><a class= "button" href="{% url 'edit_project' project.id %}">Update</a></span>
+                                        <span><a class= "button" href="{% url 'delete_project' project.id %}">Delete</a></span>
+                                    </div>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+                <p>
+                    <a class= "createbutton" href="{% url 'create_project' %}">Create a new project</a>
+                </p>
+            </div>
+        {% endblock content %}

@@ -1,32 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
-        <h1>{{ project.name }}</h1>
-        {% load markdownify %}
-        {{ project.description|markdownify }}
-        <h2>Tasks</h2>
-        <p>
-            <a href="{% url 'create_task' %}">Create a new task</a>
-        </p>
-        {% if project.tasks.all %}
-            <table>
+    <div class= "container">
+        <div class="smallcontainer">
+            <h1 id="detailheader">{{ project.name }}</h1>
+            {% load markdownify %}
+            {{ project.description|markdownify }}
+            {% if project.tasks.all %}
+            </div>
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Assignee</th>
-                        <th>Start date</th>
-                        <th>Due date</th>
-                        <th>Is completed</th>
+                        <td>
+                            <div>
+                                <span>Name</span>
+                                <span>Assignee</span>
+                                <span>Start date</span>
+                                <span>Due date</span>
+                                <span>Is completed</span>
+                            </div>
+                        </td>
                     </tr>
                 </thead>
                 <tbody>
                     {% for task in project.tasks.all %}
                         <tr>
-                            <td>{{ task.name }}</td>
-                            <td>{{ task.assignee}}</td>
-                            <td>{{ task.start_date|date:"M d, Y"}}</td>
-                            <td>{{ task.due_date|date:"M d, Y"}}</td>
-                            <td>{{ task.is_completed|yesno}}</td>
+                            <td >
+                                <div>
+                                    <span>{{ task.name }}</span>
+                                    <span>{{ task.assignee }}</span>
+                                    <span>{{ task.start_date|date:"M d" }}</span>
+                                    <span>{{ task.due_date|date:"M d" }}</span>
+                                    <span>{{ task.is_completed|yesno }}</span>
+                                </div>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>
@@ -34,5 +40,10 @@
         {% else %}
             <p>This project has no tasks</p>
         {% endif %}
+        <div class= "specialbutton">
+            <p>
+                <a class="createbutton" href="{% url 'create_task' %}">Create a new task</a>
+            </p>
+        </div>
     </div>
 {% endblock content %}
